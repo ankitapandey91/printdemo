@@ -1,0 +1,54 @@
+<alfresco-config>
+
+
+			<!-- Download document -->
+			<!-- Added evaluator to disable download action for Viewer -->
+			<config evaluator="string-compare" condition="DocLibActions">
+			<actions>
+			
+			
+			
+			<!-- Print document -->
+			<!-- Added evaluator to disable download action for Viewer -->
+			<action id="document-print" type="link" label="actions.document.print" 
+			icon="print">
+				<param name="href">{viewUrl}</param>
+				<!-- <permissions>
+					<permission allow="true">SimpleView</permission>
+				</permissions> -->
+				<!--  <evaluator>evaluator.doclib.action.print</evaluator>  -->
+				 <evaluator>evaluator.doclib.action.downloadBrowser</evaluator> 
+				 <evaluator>evaluator.doclib.action.oEditMimetype</evaluator>
+			</action>
+			
+
+</actions>
+
+
+	 <actionGroups>
+			<actionGroup id="document-browse">
+				<action index="120" id="document-print" />
+				
+			</actionGroup>
+			<actionGroup id="document-details">
+				<action index="120" id="document-print" />
+
+			</actionGroup>
+
+		</actionGroups>
+		</config>
+		
+
+
+	<!--  <config evaluator="string-compare" condition="DocLibCustom">
+		<dependencies>
+			<js src="components/documentlibrary/ev-wait-action.js" />
+			 <js src="/modules/hasCustomType.js" /> 
+		</dependencies>
+	</config> -->
+
+
+	
+
+
+</alfresco-config>
